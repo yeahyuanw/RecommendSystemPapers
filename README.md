@@ -2,7 +2,9 @@
 
 ## Recall(召回)
 
-[Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations]: https://dl.acm.org/doi/10.1145/3298689.3346996	"Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations"
+- [Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations](https://dl.acm.org/doi/10.1145/3298689.3346996)
+
+  
 
 
 ## Rough Rank(粗排)
