@@ -8,13 +8,17 @@
 
 ## Rank(排序)
 
+- 2014-KDD-Facebook: [Practical Lessons from Predicting Clicks on Ads at Facebook](https://dl.acm.org/doi/pdf/10.1145/2648584.2648589)
+
+  Facebook提出了经典的GBDT+LR模型，利用GBDT进行特征筛选和组合，根据样本进入GBDT树的叶子节点，重新构建feature vector，输入到LR模型进行CTR的预测。为了评估CTR预测概率的精确性，还介绍了Normalized Entropy、Calibration两种评估方法。这篇论文还对LR模型的实时训练中的样本拼接，模型特征分析，负采样后的CTR校准等工程trick进行了介绍。
+
 - 2016-DLRS-Google: [Wide & Deep Learning for Recommender Systems](https://dl.acm.org/doi/pdf/10.1145/2988450.2988454)
 
   该论文提出了Wide & Deep 模型来进行CTR预估。Wide & Deep模型利用Wide部分结合线性模型的记忆能力、Deep部分的DNN模型为sparse feature学习到低维的dense embedding，对没有出现过的特征组合有更好的泛化性，同时能带来更高阶的非线性特征交叉。
 
 - 2017-IJCAI-Huawei: [DeepFM: A Factorization-Machine based Neural Network for CTR Prediction](https://www.ijcai.org/Proceedings/2017/0239.pdf)
 
-  Wide & Deep模型的Wide部分的二阶特征还是需要人工组合。DeepFM模型利用FM模型来替换Wide & Deep中的Wide部分，自动进行二阶特征的组合。Deep部分和FM的二阶部分共用特征的embedding矩阵。
+  Wide & Deep模型的Wide部分的二阶特征还是需要人工组合。DeepFM模型利用FM模型来替换Wide & Deep中的Wide部分，自动进行二阶特征的组合。Deep部分和FM的二阶部分共用特征的embedding矩阵，学习高阶特征组合，提高特征交互的表征能力。
 
 - 2018-KDD-Alibaba: [Deep Interest Network for Click-Through Rate Prediction](https://dl.acm.org/doi/pdf/10.1145/3219819.3219823)
 
@@ -54,3 +58,10 @@
 
 ### 2. 基于图神经网络来解决冷启动问题
 
+## Calibration（校准）
+
+- 2010-ICML-Microsoft: [Web-Scale Bayesian Click-Through Rate Prediction for Sponsored Search Advertising in Microsoft’s Bing Search Engine](https://icml.cc/Conferences/2010/papers/901.pdf)
+
+- 2013-KDD-Google: [Ad Click Prediction: a View from the Trenches](https://dl.acm.org/doi/pdf/10.1145/2487575.2488200)
+
+  
