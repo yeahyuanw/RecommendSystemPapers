@@ -1,12 +1,12 @@
 # Must Read Papers on Recommend System
 
-## Recall(召回)
+## Recall
 
 - 2019-RecSys-Google: [Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations](https://dl.acm.org/doi/10.1145/3298689.3346996)
 
   该论文提出了一个双塔模型用于Youtube的召回。传统的softmax在工业级应用中，计算量会非常大，所以普遍会采用基于采样的softmax。该论文采用了batch softmax，并考虑了采样带来的偏差（流式数据中，高频的item会被经常的采样到batch中）。论文通过计算item在流式数据中出现的平均间隔来计算item的概率，通过将item的概率应用到batch softmax的交叉熵loss中，来减少由于采样带来的偏差。
 
-## Rank(排序)
+## Rank
 
 - 2014-KDD-Facebook: [Practical Lessons from Predicting Clicks on Ads at Facebook](https://dl.acm.org/doi/pdf/10.1145/2648584.2648589)
 
@@ -42,7 +42,7 @@
 
   该论文提出了FLEN模型来进行CTR预估。
 
-## Rerank(重排)
+## Rerank
 
 - 1998-SIGIR-Carnegie Mellon: [The Use of MMR, Diversity-Based Reranking for Reordering Documents and Producing Summaries](https://dl.acm.org/doi/pdf/10.1145/3130348.3130369)
 
@@ -50,15 +50,15 @@
 
   该论文提出用DPP(行列式点过程)算法来解决推荐中的多样性问题。 通过预先定义好的相似度和多样性，在此基础上，通过DPP对相似度和多样性做一个权衡。具体理解可以参考博客：https://zhuanlan.zhihu.com/p/94464178
 
-## MultiTask(多任务)
+## MultiTask
 
-## ColdBoot(冷启动)
+## ColdBoot
 
-### 1. 基于强化学习来解决冷启动问题
+### 1. Based on RL 
 
-### 2. 基于图神经网络来解决冷启动问题
+### 2. Based on GNN
 
-## Calibration（校准）
+## Calibration
 
 - 2010-ICML-Microsoft: [Web-Scale Bayesian Click-Through Rate Prediction for Sponsored Search Advertising in Microsoft’s Bing Search Engine](https://icml.cc/Conferences/2010/papers/901.pdf)
 
