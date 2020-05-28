@@ -4,7 +4,7 @@
 
 - 2019-RecSys-Google: [Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations](https://dl.acm.org/doi/10.1145/3298689.3346996)
 
-  该论文提出了一个双塔模型用于Youtube的召回。传统的softmax在工业级应用中，计算量会非常大，所以普遍会采用基于采样的softmax。该论文采用了batch softmax，并考虑了采样带来的偏差（流式数据中，高频的item会被经常的采样到batch中）。论文通过计算item在流式数据中出现的平均间隔来计算item的概率，通过将item的概率应用到batch softmax的交叉熵loss中，来减少由于采样带来的偏差。
+  该论文提出了一个双塔模型用于Youtube的召回。传统的softmax在工业级应用中，计算量会非常大，所以普遍会采用基于采样的softmax。该论文采用了batch softmax，并考虑了采样带来的偏差（流式数据中，高频的item会被经常的采样到batch中）。论文通过item在流式数据中出现的平均间隔来计算item的概率，通过将item的概率应用到batch softmax的交叉熵loss中，来减少由于采样带来的偏差。
 
 ## Rank
 
@@ -52,16 +52,18 @@
 
 ## MultiTask
 
-## ColdBoot
+## Coldboot
 
-### 1. Based on RL 
+## Reinforcement Learning
 
-### 2. Based on GNN
+## Graph Neural Network
 
 ## Calibration
 
 - 2010-ICML-Microsoft: [Web-Scale Bayesian Click-Through Rate Prediction for Sponsored Search Advertising in Microsoft’s Bing Search Engine](https://icml.cc/Conferences/2010/papers/901.pdf)
-
 - 2013-KDD-Google: [Ad Click Prediction: a View from the Trenches](https://dl.acm.org/doi/pdf/10.1145/2487575.2488200)
 
-  
+## Online Learning
+
+- 2019-RecSys-Twitter: [Addressing delayed feedback for continuous training with neural networks in CTR prediction](https://dl.acm.org/doi/pdf/10.1145/3298689.3347002)
+
