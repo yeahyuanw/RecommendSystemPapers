@@ -12,6 +12,8 @@
 
   Facebook提出了经典的GBDT+LR模型，利用GBDT进行特征筛选和组合，根据样本进入GBDT树的叶子节点，重新构建feature vector，输入到LR模型进行CTR的预测。为了评估CTR预测概率的精确性，还介绍了Normalized Entropy、Calibration两种评估方法。这篇论文还对LR模型的实时训练中的样本拼接，模型特征分析，负采样后的CTR校准等工程trick进行了介绍。
 
+- 2016-RecSys-Google: [Deep Neural Network for YouTube Recommendation](https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45530.pdf)
+
 - 2016-DLRS-Google: [Wide & Deep Learning for Recommender Systems](https://dl.acm.org/doi/pdf/10.1145/2988450.2988454)
 
   该论文提出了Wide & Deep 模型来进行CTR预估。Wide & Deep模型利用Wide部分结合线性模型的记忆能力、Deep部分的DNN模型为sparse feature学习到低维的dense embedding，对没有出现过的特征组合有更好的泛化性，同时能带来更高阶的非线性特征交叉。
@@ -66,4 +68,14 @@
 ## Online Learning
 
 - 2019-RecSys-Twitter: [Addressing delayed feedback for continuous training with neural networks in CTR prediction](https://dl.acm.org/doi/pdf/10.1145/3298689.3347002)
+
+## Look-alike
+
+- 2019-KDD-Tencet: [Real-time Attention Based Look-alike Model for Recommender System](https://dl.acm.org/doi/pdf/10.1145/3292500.3330707)
+
+## Position bias
+
+- 2019-RecSys-Huawei:[PAL: a position-bias aware learning framework for CTR prediction in live recommender systems](https://www.researchgate.net/publication/335771749_PAL_a_position-bias_aware_learning_framework_for_CTR_prediction_in_live_recommender_systems)
+
+  对于纯推荐类场景，前面的item存在因为position导致ctr偏高的情况；对于搜索+推荐的场景，前面的item又有可能比实际偏低，存在了position bias。一般的做法是在训练过程中，将position作为一维特征，在测试的时候将position设一个默认值0或者一个比较小的负数。这篇论文认为预测时position设置一个默认值，值不同时，线上效果的差别比较大。所以，提出了一个PAL模型来解决position bias问题。PAL将一个item被点击的概率***bCtr***拆分为 ***item被曝光的概率probSeen*** * ***item曝光后被点击的概率pCtr*** 。线下两个模块联合训练，线上预测时只有pCtr部分，这样就避免了去在线上预测时调参position的默认值。
 
