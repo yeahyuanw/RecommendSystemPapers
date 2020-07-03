@@ -77,5 +77,5 @@
 
 - 2019-RecSys-Huawei:[PAL: a position-bias aware learning framework for CTR prediction in live recommender systems](https://www.researchgate.net/publication/335771749_PAL_a_position-bias_aware_learning_framework_for_CTR_prediction_in_live_recommender_systems)
 
-  对于纯推荐类场景，前面的item存在因为position导致ctr偏高的情况；对于搜索+推荐的场景，前面的item又有可能比实际偏低，存在了position bias。一般的做法是在训练过程中，将position作为一维特征，在测试的时候将position设一个默认值0或者一个比较小的负数。这篇论文认为预测时position设置一个默认值，值不同时，线上效果的差别比较大。所以，提出了一个PAL模型来解决position bias问题。PAL将一个item被点击的概率***bCtr***拆分为 ***item被曝光的概率probSeen*** * ***item曝光后被点击的概率pCtr*** 。线下两个模块联合训练，线上预测时只有pCtr部分，这样就避免了去在线上预测时调参position的默认值。
+  对于纯推荐类场景，前面的item存在因为position导致ctr偏高的情况；对于搜索+推荐的场景，前面的item又有可能比实际偏低，存在了position bias。一般的做法是在训练过程中，将position作为一维特征，在测试的时候将position设一个默认值0或者一个比较小的负数。这篇论文认为预测时position设置一个默认值，值不同时，线上效果的差别比较大。所以，提出了一个PAL模型来解决position bias问题。PAL将一个item被点击的概率***bCtr***拆分为 ***item被曝光的概率probSeen*** * ***item曝光后被点击的概率pCtr*** 。probSeen模块的输入是position，用一个线性模型进行训练；pCtr的输入是user profile, item feature, context等特征，论文采用了DeepFM模型。线下两个模块联合训练，线上预测时只有pCtr部分，这样就避免了去在线上预测时调参position的默认值。
 
